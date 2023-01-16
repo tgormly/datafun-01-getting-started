@@ -1,66 +1,59 @@
-"""
-This example illustrates basic Python interactions.
+# RollDieDynamic.py
+"""Dynamically graphing frequencies of die rolls."""
+from matplotlib import animation
+import matplotlib.pyplot as plt
+import random 
+import seaborn as sns
+import sys
 
-1) Getting input from the user.
-2) Showing output to the screen with the print() function.
+def update(frame_number, rolls, faces, frequencies):
+    """Configures bar plot contents for each animation frame."""
+    # roll die and update frequencies
+    for i in range(rolls):
+        frequencies[random.randrange(1, 7) - 1] += 1 
 
-The terminal is also called the command line, console, or shell.
+    # reconfigure plot for updated die frequencies
+    plt.cla()  # clear old contents contents of current Figure
+    axes = sns.barplot(x=faces, y=frequencies, palette='bright')  # new bars
+    axes.set_title(f'Die Frequencies for {sum(frequencies):,} Rolls')
+    axes.set(xlabel='Die Value', ylabel='Frequency')  
+    axes.set_ylim(top=max(frequencies) * 1.10)  # scale y-axis by 10%
 
-Statements
-----------
+    # display frequency & percentage above each patch (bar)
+    for bar, frequency in zip(axes.patches, frequencies):
+        text_x = bar.get_x() + bar.get_width() / 2.0  
+        text_y = bar.get_height() 
+        text = f'{frequency:,}\n{frequency / sum(frequencies):.3%}'
+        axes.text(text_x, text_y, text, ha='center', va='bottom')
 
-Statements are the building blocks of Python programs.
-Statements are instructions that tell the computer to do something.
-Each line below is a statement.
+# read command-line arguments for number of frames and rolls per frame
+number_of_frames = int(sys.argv[1])  
+rolls_per_frame = int(sys.argv[2])  
 
-"""
+sns.set_style('whitegrid')  # white backround with gray grid lines
+figure = plt.figure('Rolling a Six-Sided Die')  # Figure for animation
+values = list(range(1, 7))  # die faces for display on x-axis
+frequencies = [0] * 6  # six-element list of die frequencies
 
-# print an empty line to the screen
-print()
+# configure and start animation that calls function update
+die_animation = animation.FuncAnimation(
+    figure, update, repeat=False, frames=number_of_frames - 1, interval=33,
+    fargs=(rolls_per_frame, values, frequencies))
 
-# print a string to the screen
-print("Greetings!")
+plt.show()  # display window
 
-# get input from the user
-name = input("What is your name?: ")
 
-# use what you got
-print("Hello " + name.capitalize() + "!")
-print()
-
-# Let's do some math and show off our skills
-
-triangle_base = 10
-triangle_height = 5
-triangle_area = triangle_base * triangle_height / 2
-print(triangle_area)
-print()
-print("I just calculated something, but that output is not very useful.")
-print("Read the code and I'll try again.")
-print()
-print("The area of the triangle is " + str(triangle_area))
-print()
-print("Hmm... that's a bit better.")
-print("We used the built-in str() function ")
-print("to convert a calculated number to a string")
-print("add it to a sentence.")
-print()
-
-response = input("Would you like to see all the built-in functions? (y/n)")
-
-if response == "y":
-    print()
-    print("We could list them ALL with:")
-    print()
-    print("dir(__builtins__)")
-    print()
-
-    print("But we'll just open a web page instead.")
-    import webbrowser
-
-    webbrowser.open_new("https://docs.python.org/3/library/functions.html")
-
-    print()
-    print("That's a lot of functions!")
-    print("We'll learn about them later.")
-    print()
+#**************************************************************************
+#* (C) Copyright 1992-2018 by Deitel & Associates, Inc. and               *
+#* Pearson Education, Inc. All Rights Reserved.                           *
+#*                                                                        *
+#* DISCLAIMER: The authors and publisher of this book have used their     *
+#* best efforts in preparing the book. These efforts include the          *
+#* development, research, and testing of the theories and programs        *
+#* to determine their effectiveness. The authors and publisher make       *
+#* no warranty of any kind, expressed or implied, with regard to these    *
+#* programs or to the documentation contained in these books. The authors *
+#* and publisher shall not be liable in any event for incidental or       *
+#* consequential damages in connection with, or arising out of, the       *
+#* furnishing, performance, or use of these programs.                     *
+#**************************************************************************

@@ -50,5 +50,12 @@ print()
 print("Look at the code. Find the f that makes it an fstring.")
 print()
 print("Add logic to calculate the area of a rectangular plot of land.")
+
+rectangle_length = 10
+rectangle_width = 3
+rectangle_area = rectangle_width * rectangle_length
+
 print("Display the results to the user.")
+print(f"Given a length of {rectangle_length}, and a width of {rectangle_width}")
+print(f"the area of a rectangle is {rectangle_area}")
 
