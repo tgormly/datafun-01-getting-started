@@ -1,18 +1,22 @@
 """
 Optional bonus. See course site for details.
 
+Tim Gormly - 01/16/2023
+
+This module simulates a game of Rock Paper Scissors using different animals.  The random module is imported so that the random.choice method can be used by the computer player to make their selection.  Nest if statements and the == operator are used to determine the winner of a round.  In these statements the .lower() method is used to account for user capitalization.
+
 """
 
 import random
 
 # Change the name below to a name of your choice
 
-name = "GameBot"
+name = "The Gamemaster"
 
 # Fix the code below to print the name using an f-string
 
 print()
-print("Hello, I'm {name}, your gamebot.")
+print(f"Hello, I'm {name}, your gamebot.")
 print("Let's play an animal guessing game!")
 print("There are 3 animals: wolf, eagle, snake (a Python of course).")
 print("The wolf scares the eagle.")
@@ -25,8 +29,7 @@ print()
 # Modify the code so the user is asked to
 # enter wolf, eagle, or snake.
 # Hint: use the input() function
-
-user_choice = "wolf"
+user_choice = input('Please enter your choice: wolf, eagle, or snake: \n')
 
 # Now the bot will pick one
 buddy_choice = random.choice(["wolf", "eagle", "snake"])
@@ -42,8 +45,27 @@ print()
 # Complete the logic to
 # compare the choices and print who won
 # In Python, indentation is important!
-if user_choice == buddy_choice:
+if user_choice.lower() == buddy_choice:
     print("We tied!")
+
+if user_choice.lower() == 'wolf':
+    if buddy_choice == 'eagle':
+        print('Your wolf scares my eagle!\n~~You Win!~~\n')
+    if buddy_choice == 'snake':
+        print('My snake bites your wolf!\n~~You Lose!~~\n')
+
+if user_choice.lower() == 'eagle':
+    if buddy_choice == 'snake':
+        print('Your eagle grabs my snake!\n~~You Win!~~\n')
+    if buddy_choice == 'wolf':
+        print('My wolf scares your eagle!\n~~You Lose!~~\n')
+
+
+if user_choice.lower() == 'snake':
+    if buddy_choice == 'wolf':
+        print('Your snake bites my wolf!\n~~You Win!~~\n')
+    if buddy_choice == 'eagle':
+        print('My eagle grabs your snake!\n~~You Lose!~~\n')
 
 
 # When you finish,
