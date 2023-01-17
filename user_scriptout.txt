@@ -1,1 +1,39 @@
-# Paste the output from a sample run here.
+PS C:\Users\timgo\OneDrive\Desktop\School\Spring2023\Week 1\datafun-01-getting-started> & C:/Users/timgo/AppData/Local/Programs/Python/Python39/python.exe "c:/Users/timgo/OneDrive/Desktop/School/Spring2023/Week 1/datafun-01-getting-started/user_script.py"
+Tim Gormly, Project 1.
+Hockey Goal Statistics
+
+Let's compare the total goals scored of three different players this season
+
+How many goals did the first player score? 4
+Only 4 goals?  That's a bad season
+How many goals did the second player score? 12
+12 goals is an OK season
+How many goals did the third player score? 45
+45 goals!?  That's a great season!
+Thank you!
+
+Computing input data...
+.
+.
+.
+Success!
+
+Let's review your data:
+
+----------------------------------------
+Total Goals Scored: 61
+----------------------------------------
+Average Number of Goals Scored: 20.333
+----------------------------------------
+Product of Goals Scored: 2160
+----------------------------------------
+Fewest Goals Scored: 4
+----------------------------------------
+Most Goals Scored: 45
+----------------------------------------
+The total number of goals scored ranges between 4 and 45
+----------------------------------------
+Would you like to see more statistics on the web? (y/n)
+y
+
+Thank you!  Good-bye

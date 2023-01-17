@@ -76,8 +76,58 @@ if user_choice.lower() == 'snake':
 # docstring comment below.
 # --------------------------------------------------------------------
 """
+PS C:\Users\timgo\OneDrive\Desktop\School\Spring2023\Week 1\datafun-01-getting-started> & C:/Users/timgo/AppData/Local/Programs/Python/Python39/python.exe "c:/Users/timgo/OneDrive/Desktop/School/Spring2023/Week 1/datafun-01-getting-started/xtra_p1.py"
 
+Hello, I'm The Gamemaster, your gamebot.
+Let's play an animal guessing game!
+There are 3 animals: wolf, eagle, snake (a Python of course).
+The wolf scares the eagle.
+The eagle grabs the snake.
+The snake bites the wolf.
+I'll pick one and you pick one and we'll see who wins.
 
+Please enter your choice: wolf, eagle, or snake:
+eagle
 
+You said eagle.
+I said wolf.
 
+My wolf scares your eagle!
+~~You Lose!~~
+
+PS C:\Users\timgo\OneDrive\Desktop\School\Spring2023\Week 1\datafun-01-getting-started> & C:/Users/timgo/AppData/Local/Programs/Python/Python39/python.exe "c:/Users/timgo/OneDrive/Desktop/School/Spring2023/Week 1/datafun-01-getting-started/xtra_p1.py"
+
+Hello, I'm The Gamemaster, your gamebot.
+Let's play an animal guessing game!
+There are 3 animals: wolf, eagle, snake (a Python of course).
+The wolf scares the eagle.
+The eagle grabs the snake.
+The snake bites the wolf.
+I'll pick one and you pick one and we'll see who wins.
+
+Please enter your choice: wolf, eagle, or snake:
+snake
+
+You said snake.
+I said snake.
+
+We tied!
+PS C:\Users\timgo\OneDrive\Desktop\School\Spring2023\Week 1\datafun-01-getting-started> & C:/Users/timgo/AppData/Local/Programs/Python/Python39/python.exe "c:/Users/timgo/OneDrive/Desktop/School/Spring2023/Week 1/datafun-01-getting-started/xtra_p1.py"
+
+Hello, I'm The Gamemaster, your gamebot.
+Let's play an animal guessing game!
+There are 3 animals: wolf, eagle, snake (a Python of course).
+The wolf scares the eagle.
+The eagle grabs the snake.
+The snake bites the wolf.
+I'll pick one and you pick one and we'll see who wins.
+
+Please enter your choice: wolf, eagle, or snake:
+eagle
+
+You said eagle.
+I said snake.
+
+Your eagle grabs my snake!
+~~You Win!~~
 """
